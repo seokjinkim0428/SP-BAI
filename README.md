@@ -1,6 +1,14 @@
 # SP-BAI
 
-Reference implementation for the experiments in `SP-BAI.tex`.
+Reference implementation for the experiments in the paper "Nearly Optimal Best Arm Identification for Semiparametric Bandits."
+
+## Paper
+
+Nearly Optimal Best Arm Identification for Semiparametric Bandits
+
+Seok-Jin Kim
+
+Accepted at AISTATS 2026.
 
 This repository contains code for fixed-confidence best-arm identification in semiparametric bandits, together with the baselines used in the paper:
 
@@ -21,9 +29,6 @@ scripts/         small data-preparation utilities
 SP-BAI-Small-gap.ipynb
 SP-BAI-Uniform.ipynb
 SP-BAI-Real-data.ipynb
-
-SP-BAI.tex
-ED_COLT.tex
 ```
 
 The notebooks are thin wrappers around the shared `sp_bai` package. The implementation logic is intentionally centralized in the package so that the synthetic and real-data experiments use the same algorithm code paths.
@@ -46,7 +51,11 @@ The Jester experiments rely on the Jester joke-rating dataset. The original sour
 
 - https://eigentaste.berkeley.edu/dataset/archive/
 
-A Kaggle mirror may be convenient for downloading CSV-formatted files, but it is not the canonical source. For a public GitHub release, the safer practice is to avoid redistributing the raw Jester files directly in the repository and instead provide download instructions.
+For convenience, a CSV-formatted Kaggle mirror is also available here:
+
+- https://www.kaggle.com/datasets/vikashrajluhaniwal/jester-17m-jokes-ratings-dataset
+
+The Kaggle page may be convenient for downloading CSV-formatted files, but the UC Berkeley archive remains the canonical source. For a public GitHub release, the safer practice is to avoid redistributing the raw Jester files directly in the repository and instead provide download instructions.
 
 This repository now supports the following workflow:
 
@@ -126,13 +135,3 @@ The shared algorithm implementations are in `sp_bai.algorithms`:
 - `SBE` and `G-Opt/DEO` follow the semiparametric best-arm identification setup in the prior orthogonalized-regression literature.
 - `RAGE` is included for the synthetic semiparametric stress test and uses the Pukelsheim-style rounding now used throughout the repository.
 - `LUCB` and `AE` are implemented as fixed-confidence MAB baselines with the variance settings used in the Jester experiment code.
-
-## Baseline References
-
-- `SBE` and `G-Opt/DEO`: Seok-Jin Kim, Gi-Soo Kim, and Min-hwan Oh, *Experimental Design for Semiparametric Bandits* ([`ED_COLT.tex`](ED_COLT.tex)).
-- `RAGE`: Victor Fiez et al., *Sequential Experimental Design for Transductive Linear Bandits* ([PDF](Sequential%20Experimental%20Design%20for%20Transductive%20Linear%20Bandits.pdf)).
-- `LUCB` and `AE` (Action Elimination): Lilian Kalyanakrishnan et al., *Best-arm Identification Algorithms for Multi-Armed Bandits in the Fixed Confidence Setting* ([PDF](Best-arm%20identification%20algorithms%20for%20multi-armed%20bandits%20in%20the%20fixed%20confidence%20setting.pdf)).
-
-## Citation
-
-If you use this repository, please cite the corresponding paper once the camera-ready version is available.
