@@ -131,7 +131,7 @@ The shared algorithm implementations are in `sp_bai.algorithms`:
 
 ## Notes On Baselines
 
-- `SP-BAI` uses the shared phase-elimination implementation in `sp_bai.algorithms.spbai`.
-- `SBE` and `G-Opt/DEO` follow the semiparametric best-arm identification setup in the prior orthogonalized-regression literature.
-- `RAGE` is included for the synthetic semiparametric stress test and uses the Pukelsheim-style rounding now used throughout the repository.
-- `LUCB` and `AE` are implemented as fixed-confidence MAB baselines with the variance settings used in the Jester experiment code.
+- `SP-BAI` is our method from "Nearly Optimal Best Arm Identification for Semiparametric Bandits" (accepted at AISTATS 2026).
+- `SBE` and `G-Opt/DEO` are semiparametric bandit baselines from Kim, S.-J., Kim, G.-S., and Oh, M.-h. (2025). "Experimental Design for Semiparametric Bandits." In *Proceedings of the Thirty Eighth Conference on Learning Theory*, volume 291 of *Proceedings of Machine Learning Research*, pages 3215-3252.
+- `RAGE` is the transductive linear bandit baseline from Fiez, T., Jain, L., Jamieson, K. G., and Ratliff, L. (2019). "Sequential Experimental Design for Transductive Linear Bandits." In *Advances in Neural Information Processing Systems*, volume 32.
+- `LUCB` and `AE` are fixed-confidence multi-armed bandit baselines from Jamieson, K. and Nowak, R. (2014). "Best-Arm Identification Algorithms for Multi-Armed Bandits in the Fixed Confidence Setting." In *2014 48th Annual Conference on Information Sciences and Systems (CISS)*, pages 1-6.
